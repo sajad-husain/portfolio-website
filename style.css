@@ -10,3 +10,11 @@ body {
         font-size: 1.5rem;
     }
 }
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
