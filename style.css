@@ -26,6 +26,26 @@ a:hover {
     color: blue;
 }
 
+nav {
+    display: flex;
+    justify-content: end;
+
+    gap: 5%;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid gray;
+    width: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 5px 5px #333333af;
+
+}
+
 ul {
     list-style-type: none;
     display: flex;
