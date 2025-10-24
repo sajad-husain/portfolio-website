@@ -20,3 +20,11 @@ a {
 a:hover {
     color: blue;
 }
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
