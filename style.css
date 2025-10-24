@@ -28,7 +28,8 @@ a:hover {
 
 nav {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    align-items: center;
 
     gap: 5%;
 }
@@ -37,13 +38,14 @@ button {
     background-color: transparent;
     border: 1px solid gray;
     width: 150px;
+    height: 40px;
     border-radius: 10px;
     cursor: pointer;
 }
 
 button:hover {
-    box-shadow: 5px 5px #333333af;
-
+    box-shadow: 1px 1px #333333af;
+    transition: box-shadow 0.3s ease;
 }
 
 ul {
