@@ -55,3 +55,13 @@ ul {
     align-items: center;
     gap: 5%;
 }
+
+#bio-form {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#bio-input {
+    padding: 5px;
+}
