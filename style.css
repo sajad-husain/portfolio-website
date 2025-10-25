@@ -44,6 +44,7 @@ button {
 
 button:hover {
     box-shadow: 1px 1px #333333af;
+    transform: scale(1.1);
     transition: box-shadow 0.3s ease;
 }
 
