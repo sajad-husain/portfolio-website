@@ -5,5 +5,6 @@ const users = [
 ]
 
 function arrayFilterj(arr, minAge) {
-
+    return users.filter(user => user.age >= minAge)
 }
+
