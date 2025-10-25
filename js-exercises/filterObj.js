@@ -5,6 +5,15 @@ const users = [
 ]
 
 function arrayFilterj(arr, minAge) {
-    return users.filter(user => user.age >= minAge)
+    return arr.filter(user => user.age >= minAge)
 }
 
+console.log(arrayFilterj(users, 30));
+
+
+// Founding a needle in haystack 
+function findNeedleInHayStack(haystack) {
+    if (haystack.includes("needle")) {
+        return `found needle in haystack at the position ${haystack.indexOf("needle")}`
+    }
+}
