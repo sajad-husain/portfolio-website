@@ -20,3 +20,16 @@ function paperWork(n, m) {
     return n * m
 }
 
+// const projects = [{ name: "bio page" }]
+// const projectList = document.getElementById("project-list")
+
+// projects.map(project => {
+//     const li = document.createElement("li")
+//     li.innerHTML = `<a >${project.name}</a>`
+//     projectList.appendChild(li)
+// })
+
+const numbers = [1, 2, 3, 4]
+
+const sum = numbers.reduce((acc, curr) => acc + curr, 0)
+console.log(sum);
