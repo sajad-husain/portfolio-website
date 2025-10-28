@@ -24,3 +24,7 @@ function setupCounter() {
     })
 }
 setupCounter()
+
+//
+let itsTypeisNull = null
+console.log(typeof itsTypeisNull) // it's type will object which is widely considered as a bug?
