@@ -3,13 +3,16 @@ import { useState } from "react";
 
 function CounterGame() {
     const [score, setScore] = useState(0);
+    const [highScore, setHighScore ] = useState(0)
     
     const increaseScore = () => {
-        setScore(score + 1);
+        const newScore = score + 2
+        setScore(score + 2);
+        if (newScore > highScore) setHighScore(newScore)
     };
     
     const decreaseScore = () => {
-        setScore(score - 1);
+        setScore(score - 2);
     };
     
     const resetScore = () => {
@@ -20,6 +23,8 @@ function CounterGame() {
     const toggleDarkMode = () => {
         setIsDark(!isDark);
     };
+
+
     
     const bgColor = isDark ? 'bg-gray-900' : 'bg-gray-100';
     const textColor = isDark ? 'text-white' : 'text-gray-900';
@@ -76,6 +81,8 @@ function CounterGame() {
                     {score > 0 && score < 5 && <p>👍 Getting there!</p>}
                     {score >= 5 && score < 10 && <p>🔥 On fire!</p>}
                     {score >= 10 && <p>🏆 Champion!</p>}
+                    {score > 10 && <div className="mt-4 text-yellow-500">⭐ You got a Star!</div>}
+                    <div className="mt-4 text-red-500">High Score: {highScore}</div>
                 </div>
             </div>
         </div>
