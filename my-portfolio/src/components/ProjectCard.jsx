@@ -45,3 +45,4 @@ function ProjectCard({ title, description, tech, link, gradient }) {
         </div>
     );
 }
+export default ProjectCard
