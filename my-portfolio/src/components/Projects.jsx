@@ -1,3 +1,5 @@
+import ProjectCard from "./ProjectCard";
+
 function Projects() {
     // Projects data array
     const projects = [
@@ -52,3 +54,4 @@ function Projects() {
         </section>
     );
 }
+export default Projects;
