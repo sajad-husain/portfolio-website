@@ -1,8 +1,8 @@
-import { useActionState, useState } from "react";
+import { useState } from "react";
 
 function Contact() {
     // Form state
-    const [formData, setFormData] = useActionState({
+    const [formData, setFormData] = useState({
         name: '',
         email: '',
         message: ''
