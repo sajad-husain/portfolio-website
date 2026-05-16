@@ -1,5 +1,4 @@
 
-
 function Hero() {
     const myName = "Sajjad Hussain";
     
@@ -9,6 +8,7 @@ function Hero() {
     };
     
     return (
+        // ✅ Ab saari Tailwind classes add karo
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">
             <div className="bg-white rounded-2xl shadow-2xl p-12 text-center max-w-2xl mx-4 transform transition-all hover:scale-105 duration-300">
                 
@@ -27,14 +27,12 @@ function Hero() {
                     🔍 Check My Work
                 </button>
                 
-                {/* ✅ Fixed: Added margin, border, text and progress width */}
                 <div className="mt-8 pt-6 border-t border-gray-200">
                     <p className="text-sm text-gray-500 mb-2">
                         📚 React Mastery Progress
                     </p>
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
                         <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-2.5 rounded-full w-2/4"></div>
-                        {/* w-2/4 = 50% progress */}
                     </div>
                     <p className="text-xs text-gray-400 mt-2">
                         Week 1: Components & JSX ✅

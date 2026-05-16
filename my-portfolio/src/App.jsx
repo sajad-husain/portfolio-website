@@ -1,5 +1,4 @@
 import Hero from './components/Hero'
-import './index.css'
 const App = () => {
   return (
     <div>
