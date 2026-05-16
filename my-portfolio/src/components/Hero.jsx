@@ -32,7 +32,7 @@ function Hero() {
                         📚 React Mastery Progress
                     </p>
                     <div className="w-full bg-gray-200 rounded-full h-2.5">
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-2.5 rounded-full w-2/4"></div>
+                        <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-2.5 rounded-full w-3/4"></div>
                     </div>
                     <p className="text-xs text-gray-400 mt-2">
                         Week 1: Components & JSX ✅
