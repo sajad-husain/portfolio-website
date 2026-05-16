@@ -1,9 +1,9 @@
 import Hero from './components/Hero'
-import Props from './components/practicing/Props'
+import CounterGame from './components/practicing/CounterGame'
 const App = () => {
   return (
     <div>
-      <Props />
+      <CounterGame />
       <Hero />
     </div>
   )
