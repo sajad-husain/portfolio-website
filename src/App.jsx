@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 function App() {
     const [darkMode, setDarkMode] = useState(false);
-
+ 
     const toggleDarkMode = useCallback(() => {
         setDarkMode((prev) => !prev);
     }, []);
