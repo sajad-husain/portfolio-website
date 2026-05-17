@@ -1,42 +1,66 @@
+const skillCategories = [
+    {
+        id: "frontend",
+        name: "Frontend",
+        skills: [
+            { id: "react", name: "React" },
+            { id: "js", name: "JavaScript" },
+            { id: "tailwind", name: "Tailwind CSS" },
+            { id: "html5", name: "HTML5" },
+            { id: "css3", name: "CSS3" },
+        ],
+    },
+    {
+        id: "backend",
+        name: "Backend",
+        skills: [
+            { id: "node", name: "Node.js" },
+            { id: "express", name: "Express" },
+            { id: "python", name: "Python" },
+            { id: "mongodb", name: "MongoDB" },
+            { id: "sql", name: "SQL" },
+        ],
+    },
+    {
+        id: "tools",
+        name: "Tools & Others",
+        skills: [
+            { id: "git", name: "Git" },
+            { id: "github", name: "GitHub" },
+            { id: "vscode", name: "VS Code" },
+            { id: "vite", name: "Vite" },
+            { id: "postman", name: "Postman" },
+        ],
+    },
+];
+
 function Skills() {
-    // Skills array - Frontend, Backend, Tools
-    const skillCategories = [
-        {
-            name: "🎨 Frontend",
-            skills: ["React", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"]
-        },
-        {
-            name: "⚙️ Backend",
-            skills: ["Node.js", "Express", "Python", "MongoDB", "SQL"]
-        },
-        {
-            name: "🛠️ Tools & Others",
-            skills: ["Git", "GitHub", "VS Code", "Vite", "Postman"]
-        }
-    ];
-    
     return (
-        <section className="py-16 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <section
+            className="section-container bg-white dark:bg-gray-900"
+            aria-labelledby="skills-title"
+        >
             <div className="container mx-auto max-w-6xl">
-                {/* Section Title */}
-                <h2 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
-                    🛠️ My Skills
+                <h2 id="skills-title" className="section-title">
+                    My Skills
                 </h2>
-                
-                {/* Skills Grid */}
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {skillCategories.map((category, idx) => (
-                        <div key={idx} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                    {skillCategories.map((category) => (
+                        <div
+                            key={category.id}
+                            className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg"
+                        >
                             <h3 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
                                 {category.name}
                             </h3>
                             <div className="flex flex-wrap gap-3 justify-center">
-                                {category.skills.map((skill, skillIdx) => (
+                                {category.skills.map((skill) => (
                                     <span
-                                        key={skillIdx}
-                                        className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md hover:scale-105 transition-transform duration-200"
+                                        key={skill.id}
+                                        className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md btn-hover"
                                     >
-                                        {skill}
+                                        {skill.name}
                                     </span>
                                 ))}
                             </div>
@@ -47,4 +71,5 @@ function Skills() {
         </section>
     );
 }
-export default Skills
+
+export default Skills;

@@ -1,51 +1,73 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const INITIAL_FORM = { name: "", email: "", message: "" };
 
 function Contact() {
-    // Form state
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-    
+    const [formData, setFormData] = useState(INITIAL_FORM);
     const [submitted, setSubmitted] = useState(false);
-    
-    // Handle input changes
+    const [errors, setErrors] = useState({});
+    const timerRef = useRef(null);
+
+    useEffect(() => {
+        return () => {
+            if (timerRef.current) clearTimeout(timerRef.current);
+        };
+    }, []);
+
+    const validate = () => {
+        const newErrors = {};
+        if (!formData.name.trim()) newErrors.name = "Name is required";
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = "Enter a valid email address";
+        }
+        if (!formData.message.trim()) newErrors.message = "Message is required";
+        return newErrors;
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
+        setFormData((prev) => ({ ...prev, [name]: value }));
+        if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
     };
-    
-    // Handle form submit
+
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent page refresh
-        console.log("Form submitted:", formData);
+        e.preventDefault();
+        const validationErrors = validate();
+        setErrors(validationErrors);
+        if (Object.keys(validationErrors).length > 0) return;
+
         setSubmitted(true);
-        
-        // Reset form after 3 seconds
-        setTimeout(() => {
+
+        if (timerRef.current) clearTimeout(timerRef.current);
+        timerRef.current = setTimeout(() => {
             setSubmitted(false);
-            setFormData({ name: '', email: '', message: '' });
+            setFormData(INITIAL_FORM);
         }, 3000);
     };
-    
+
+    const inputClass = (field) =>
+        `w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white ${
+            errors[field]
+                ? "border-red-500 dark:border-red-400"
+                : "border-gray-300 dark:border-gray-600"
+        }`;
+
     return (
-        <section className="py-16 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <section
+            className="section-container bg-white dark:bg-gray-900"
+            aria-labelledby="contact-title"
+        >
             <div className="container mx-auto max-w-3xl">
-                {/* Section Title */}
-                <h2 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-4">
-                    📧 Contact Me
+                <h2 id="contact-title" className="section-title">
+                    Contact Me
                 </h2>
                 <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
                     Have a project in mind? Let's talk!
                 </p>
-                
-                {/* Contact Form */}
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Name Input */}
+
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div>
                         <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                             Name *
@@ -57,12 +79,18 @@ function Contact() {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                            aria-invalid={!!errors.name}
+                            aria-describedby={errors.name ? "name-error" : undefined}
+                            className={inputClass("name")}
                             placeholder="Enter your name"
                         />
+                        {errors.name && (
+                            <p id="name-error" className="mt-1 text-sm text-red-500" role="alert">
+                                {errors.name}
+                            </p>
+                        )}
                     </div>
-                    
-                    {/* Email Input */}
+
                     <div>
                         <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                             Email *
@@ -74,12 +102,18 @@ function Contact() {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                            aria-invalid={!!errors.email}
+                            aria-describedby={errors.email ? "email-error" : undefined}
+                            className={inputClass("email")}
                             placeholder="Enter your email"
                         />
+                        {errors.email && (
+                            <p id="email-error" className="mt-1 text-sm text-red-500" role="alert">
+                                {errors.email}
+                            </p>
+                        )}
                     </div>
-                    
-                    {/* Message Input */}
+
                     <div>
                         <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                             Message *
@@ -91,31 +125,51 @@ function Contact() {
                             onChange={handleChange}
                             required
                             rows="5"
-                            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
+                            aria-invalid={!!errors.message}
+                            aria-describedby={errors.message ? "message-error" : undefined}
+                            className={inputClass("message")}
                             placeholder="Tell me about your project..."
                         ></textarea>
+                        {errors.message && (
+                            <p id="message-error" className="mt-1 text-sm text-red-500" role="alert">
+                                {errors.message}
+                            </p>
+                        )}
                     </div>
-                    
-                    {/* Submit Button */}
+
                     <button
                         type="submit"
-                        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-3 px-6 rounded-lg hover:scale-105 transition-transform duration-200"
+                        className="w-full btn-primary py-3 px-6 text-lg"
                     >
-                        {submitted ? "✓ Sent Successfully!" : "Send Message 📨"}
+                        {submitted ? "✓ Sent Successfully!" : "Send Message"}
                     </button>
                 </form>
-                
-                {/* Social Links */}
+
                 <div className="mt-12 text-center">
                     <p className="text-gray-600 dark:text-gray-400 mb-4">Or connect with me on:</p>
                     <div className="flex justify-center gap-6">
-                        <a href="https://github.com/yourusername" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <a
+                            href="https://github.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        >
                             GitHub
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <a
+                            href="https://linkedin.com/in/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        >
                             LinkedIn
                         </a>
-                        <a href="https://twitter.com/yourusername" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <a
+                            href="https://twitter.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        >
                             Twitter
                         </a>
                     </div>
@@ -124,4 +178,5 @@ function Contact() {
         </section>
     );
 }
+
 export default Contact;

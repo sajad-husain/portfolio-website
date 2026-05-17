@@ -1,40 +1,47 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Hero from "./components/Hero";
-import About from "./components/About"
-import Skills from "./components/Skills"
-import Projects from "./components/Projects"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
 function App() {
-    // Dark mode state
     const [darkMode, setDarkMode] = useState(false);
-    
-    // Toggle dark mode
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-    };
-    
+
+    const toggleDarkMode = useCallback(() => {
+        setDarkMode((prev) => !prev);
+    }, []);
+
     return (
-        <div className={darkMode ? 'dark' : ''}>
-            {/* Dark Mode Toggle Button */}
-            <button
-                onClick={toggleDarkMode}
-                className="fixed top-4 right-4 z-50 bg-gray-800 dark:bg-white text-white dark:text-gray-800 p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-200"
-                aria-label="Toggle Dark Mode"
+        <>
+            <a
+                href="#main-content"
+                className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded focus:shadow-lg"
             >
-                {darkMode ? '☀️' : '🌙'}
-            </button>
-            
-            {/* All Sections */}
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Contact />
-            <Footer />
-        </div>
+                Skip to main content
+            </a>
+
+            <div className={darkMode ? "dark" : ""}>
+                <button
+                    onClick={toggleDarkMode}
+                    className="fixed top-4 right-4 z-50 bg-gray-800 dark:bg-white text-white dark:text-gray-800 p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-200"
+                    aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                >
+                    {darkMode ? "☀️" : "🌙"}
+                </button>
+
+                <main id="main-content">
+                    <Hero />
+                    <About />
+                    <Skills />
+                    <Projects />
+                    <Contact />
+                </main>
+                <Footer />
+            </div>
+        </>
     );
 }
 
-// Export App
 export default App;

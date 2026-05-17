@@ -1,6 +1,6 @@
 function Footer() {
     return (
-        <footer className="bg-gray-900 text-white py-8 px-4">
+        <footer className="bg-gray-900 text-white py-8 px-4" role="contentinfo">
             <div className="container mx-auto text-center">
                 <p className="mb-2">
                     © 2026 Sajjad Hussain | Built with ❤️ using React + Tailwind
@@ -12,4 +12,5 @@ function Footer() {
         </footer>
     );
 }
+
 export default Footer;

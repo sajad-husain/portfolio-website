@@ -2,7 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scrollbar */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-500;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply py-16 px-4 transition-colors duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-center text-gray-800 dark:text-white mb-12;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-200;
+  }
+
+  .btn-hover {
+    @apply hover:scale-105 transition-transform duration-200;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
