@@ -16,6 +16,20 @@
   }
 }
 
+@layer utilities {
+  .surface-base {
+    background-color: #0a0a0f;
+  }
+
+  .surface-raised {
+    background-color: #12121a;
+  }
+
+  .surface-overlay {
+    background-color: #1a1a24;
+  }
+}
+
 @layer components {
   .section-container {
     @apply py-16 px-4 transition-colors duration-300;
