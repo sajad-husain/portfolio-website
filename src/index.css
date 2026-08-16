@@ -7,6 +7,10 @@
     scroll-behavior: smooth;
   }
 
+  body {
+    @apply bg-[#0a0a0f] text-gray-100 antialiased;
+  }
+
   *:focus-visible {
     @apply outline-2 outline-offset-2 outline-blue-500;
   }
