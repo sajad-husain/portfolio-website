@@ -58,7 +58,7 @@ function Skills() {
                                 {category.skills.map((skill) => (
                                     <span
                                         key={skill.id}
-                                        className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md btn-hover"
+                                        className="bg-surface-raised border border-white/10 text-ink-primary px-4 py-2 rounded-full text-sm font-semibold btn-hover">
                                     >
                                         {skill.name}
                                     </span>

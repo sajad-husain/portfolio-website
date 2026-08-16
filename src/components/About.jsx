@@ -11,7 +11,7 @@ function About() {
 
                 <div className="flex flex-col md:flex-row gap-8 items-center">
                     <div className="flex-shrink-0">
-                        <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
+                        <div className="w-48 h-48 bg-surface-raised rounded-full flex items-center justify-center shadow-xl">
                             <span className="text-6xl" role="img" aria-label="Developer emoji">👨‍💻</span>
                         </div>
                     </div>

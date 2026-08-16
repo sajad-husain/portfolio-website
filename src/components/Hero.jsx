@@ -1,7 +1,7 @@
 function Hero() {
     return (
         <section
-            className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 px-4"
+            className="min-h-screen flex items-center justify-center surface-base px-4"
             aria-label="Hero"
         >
             <div className="text-center text-white">
