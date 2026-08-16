@@ -7,6 +7,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Space Grotesk"', "sans-serif"],
+      },
       colors: {
         canvas: "#0a0a0f",
         surface: {
