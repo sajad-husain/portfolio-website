@@ -7,6 +7,23 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        canvas: "#0a0a0f",
+        surface: {
+          DEFAULT: "#12121a",
+          raised: "#1a1a24",
+        },
+        accent: {
+          DEFAULT: "#8b5cf6",
+          soft: "#a78bfa",
+          muted: "#7c3aed",
+        },
+        ink: {
+          primary: "#f4f4f6",
+          secondary: "#b8b8c4",
+          muted: "#8a8a99",
+        },
+      },
       animation: {
         "fade-in": "fadeIn 1s ease-out",
       },
