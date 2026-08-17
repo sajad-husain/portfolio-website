@@ -39,6 +39,15 @@
     @apply bg-white/[0.04] border border-white/10 backdrop-blur-md rounded-xl;
   }
 
+  .glow {
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.25);
+  }
+
+  .glow-hover:hover,
+  .glow-hover:focus-visible {
+    box-shadow: 0 0 32px rgba(139, 92, 246, 0.4);
+  }
+
   .section-container {
     @apply py-20 px-4 transition-colors duration-300;
   }
