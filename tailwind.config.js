@@ -9,6 +9,8 @@ export default {
     extend: {
       fontFamily: {
         display: ['"Space Grotesk"', "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ['"JetBrains Mono"', "monospace"],
       },
       colors: {
         canvas: "#0a0a0f",
