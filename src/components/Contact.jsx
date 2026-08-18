@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 
+// TODO: create a form at https://formspree.io and paste your form ID below
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 const INITIAL_FORM = { name: "", email: "", message: "" };
 
 function Contact() {
