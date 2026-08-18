@@ -17,17 +17,18 @@ function About() {
                     </div>
 
                     <div className="flex-1 text-center md:text-left">
-                        <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                            Hey there! I'm <span className="font-bold text-blue-600 dark:text-blue-400">Sajjad Hussain</span>,
-                            a passionate full-stack developer from Pakistan 🇵🇰
+                        <p className="text-lg text-ink-secondary mb-4 leading-relaxed">
+                            I'm <span className="font-semibold text-accent-soft">Sajjad Hussain</span>,
+                            a full-stack developer from Pakistan building with the MERN and PERN stacks.
                         </p>
-                        <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                            I love building web applications that solve real problems. Currently, I'm mastering
-                            <span className="font-semibold text-purple-600 dark:text-purple-400"> React, Node.js, and Modern JavaScript</span>.
+                        <p className="text-ink-secondary mb-4 leading-relaxed">
+                            I build web applications that solve real problems, working across
+                            <span className="font-medium text-ink-primary"> React, Node.js, and modern JavaScript</span> from
+                            database to deployment.
                         </p>
-                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                            When I'm not coding, you'll find me learning new technologies, contributing to open source,
-                            or enjoying a good cup of chai ☕
+                        <p className="text-ink-secondary leading-relaxed">
+                            Outside of client work I explore new tooling, contribute to open source,
+                            and sharpen my engineering fundamentals.
                         </p>
 
                         <div className="mt-6 p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
