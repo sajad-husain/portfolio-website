@@ -8,6 +8,7 @@ const INITIAL_FORM = { name: "", email: "", message: "" };
 function Contact() {
     const [formData, setFormData] = useState(INITIAL_FORM);
     const [submitted, setSubmitted] = useState(false);
+    const [status, setStatus] = useState("idle");
     const [errors, setErrors] = useState({});
     const timerRef = useRef(null);
 
@@ -35,17 +36,27 @@ function Contact() {
         if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const validationErrors = validate();
         setErrors(validationErrors);
         if (Object.keys(validationErrors).length > 0) return;
 
-        setSubmitted(true);
+        setStatus("sending");
+        try {
+            const res = await fetch(FORMSPREE_ENDPOINT, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify(formData),
+            });
+            setStatus(res.ok ? "sent" : "error");
+        } catch {
+            setStatus("error");
+        }
 
         if (timerRef.current) clearTimeout(timerRef.current);
         timerRef.current = setTimeout(() => {
-            setSubmitted(false);
+            setStatus("idle");
             setFormData(INITIAL_FORM);
         }, 3000);
     };
@@ -142,9 +153,10 @@ function Contact() {
 
                     <button
                         type="submit"
-                        className="w-full btn-primary py-3 px-6 text-lg"
+                        disabled={status === "sending"}
+                        className="w-full btn-primary py-3 px-6 text-lg disabled:opacity-60"
                     >
-                        {submitted ? "✓ Sent Successfully!" : "Send Message"}
+                        {status === "sending" ? "Sending..." : "Send Message"}
                     </button>
                 </form>
 
