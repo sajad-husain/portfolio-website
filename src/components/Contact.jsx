@@ -151,6 +151,17 @@ function Contact() {
                         )}
                     </div>
 
+                    {status === "sent" && (
+                        <p className="text-sm text-emerald-400" role="status">
+                            Message sent successfully — I'll get back to you soon.
+                        </p>
+                    )}
+                    {status === "error" && (
+                        <p className="text-sm text-red-400" role="alert">
+                            Something went wrong. Please email me directly instead.
+                        </p>
+                    )}
+
                     <button
                         type="submit"
                         disabled={status === "sending"}
