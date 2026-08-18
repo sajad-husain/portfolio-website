@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import useTheme from "./hooks/useTheme";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -7,11 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
-    const [darkMode, setDarkMode] = useState(false);
- 
-    const toggleDarkMode = useCallback(() => {
-        setDarkMode((prev) => !prev);
-    }, []);
+    const [darkMode, toggleDarkMode] = useTheme();
 
     return (
         <>
@@ -22,7 +18,7 @@ function App() {
                 Skip to main content
             </a>
 
-            <div className={darkMode ? "dark" : ""}>
+            <div>
                 <button
                     onClick={toggleDarkMode}
                     className="fixed top-4 right-4 z-50 bg-gray-800 dark:bg-white text-white dark:text-gray-800 p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-200"
