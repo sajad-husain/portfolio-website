@@ -8,7 +8,7 @@ const NAV_LINKS = [
     { id: "contact", label: "Contact" },
 ];
 
-function Navbar() {
+function Navbar({ darkMode, toggleTheme }) {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const sectionIds = useMemo(() => NAV_LINKS.map((l) => l.id), []);
@@ -38,27 +38,65 @@ function Navbar() {
                     {"<sajjad />"}
                 </a>
 
-                <ul className="hidden md:flex items-center gap-8">
-                    {NAV_LINKS.map((link) => (
-                        <li key={link.id}>
-                            <a
-                                href={`#${link.id}`}
-                                aria-current={activeId === link.id ? "true" : undefined}
-                                className={`relative text-sm font-medium transition-colors ${
-                                    activeId === link.id
-                                        ? "text-ink-primary after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-accent"
-                                        : "text-ink-secondary hover:text-ink-primary"
-                                }`}
-                            >
-                                {link.label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+                <div className="hidden md:flex items-center gap-6">
+                    <ul className="flex items-center gap-8">
+                        {NAV_LINKS.map((link) => (
+                            <li key={link.id}>
+                                <a
+                                    href={`#${link.id}`}
+                                    aria-current={activeId === link.id ? "true" : undefined}
+                                    className={`relative text-sm font-medium transition-colors ${
+                                        activeId === link.id
+                                            ? "text-ink-primary after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-accent"
+                                            : "text-ink-secondary hover:text-ink-primary"
+                                    }`}
+                                >
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
 
-                <button
-                    type="button"
-                    className="md:hidden p-2 text-ink-primary"
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                        className="p-2 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-white/5 transition-colors"
+                    >
+                        {darkMode ? (
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                            </svg>
+                        ) : (
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
+
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                        className="md:hidden p-2 mr-1 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-white/5 transition-colors"
+                    >
+                        {darkMode ? (
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                            </svg>
+                        ) : (
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        )}
+                    </button>
+
+                    <button
+                        type="button"
+                        className="md:hidden p-2 text-ink-primary"
                     aria-expanded={menuOpen}
                     aria-controls="mobile-menu"
                     aria-label={menuOpen ? "Close menu" : "Open menu"}

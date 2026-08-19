@@ -46,7 +46,7 @@ function Projects() {
     return (
         <section
             id="projects"
-            className="section-container bg-gray-50 dark:bg-gray-800"
+            className="section-container surface-raised"
             aria-labelledby="projects-title"
         >
             <div className="container mx-auto max-w-6xl">

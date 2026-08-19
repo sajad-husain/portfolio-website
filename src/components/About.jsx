@@ -2,7 +2,7 @@ function About() {
     return (
         <section
             id="about"
-            className="section-container bg-gray-50 dark:bg-gray-800"
+            className="section-container surface-raised"
             aria-labelledby="about-title"
         >
             <div className="container mx-auto max-w-4xl">

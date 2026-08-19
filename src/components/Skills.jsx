@@ -38,7 +38,7 @@ function Skills() {
     return (
         <section
             id="skills"
-            className="section-container bg-white dark:bg-gray-900"
+            className="section-container"
             aria-labelledby="skills-title"
         >
             <div className="container mx-auto max-w-6xl">

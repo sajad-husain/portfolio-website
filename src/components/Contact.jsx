@@ -71,7 +71,7 @@ function Contact() {
     return (
         <section
             id="contact"
-            className="section-container bg-white dark:bg-gray-900"
+            className="section-container"
             aria-labelledby="contact-title"
         >
             <div className="container mx-auto max-w-3xl">
