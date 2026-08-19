@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import useScrollSpy from "../hooks/useScrollSpy";
 
 const NAV_LINKS = [
     { id: "about", label: "About" },
@@ -10,6 +11,8 @@ const NAV_LINKS = [
 function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const sectionIds = useMemo(() => NAV_LINKS.map((l) => l.id), []);
+    const activeId = useScrollSpy(sectionIds);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
@@ -40,7 +43,12 @@ function Navbar() {
                         <li key={link.id}>
                             <a
                                 href={`#${link.id}`}
-                                className="text-sm font-medium text-ink-secondary hover:text-ink-primary transition-colors"
+                                aria-current={activeId === link.id ? "true" : undefined}
+                                className={`relative text-sm font-medium transition-colors ${
+                                    activeId === link.id
+                                        ? "text-ink-primary after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-accent"
+                                        : "text-ink-secondary hover:text-ink-primary"
+                                }`}
                             >
                                 {link.label}
                             </a>
