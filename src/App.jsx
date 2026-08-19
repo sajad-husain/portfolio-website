@@ -1,4 +1,5 @@
 import useTheme from "./hooks/useTheme";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -19,6 +20,8 @@ function App() {
             </a>
 
             <div>
+                <Navbar />
+
                 <button
                     onClick={toggleDarkMode}
                     className="fixed top-4 right-4 z-50 bg-gray-800 dark:bg-white text-white dark:text-gray-800 p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-200"
@@ -28,8 +31,7 @@ function App() {
                 </button>
 
                 <main id="main-content">
-                    <Hero />
-                    <About />
+                    <Hero />                    <About />
                     <Skills />
                     <Projects />
                     <Contact />

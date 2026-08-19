@@ -1,6 +1,7 @@
 function About() {
     return (
         <section
+            id="about"
             className="section-container bg-gray-50 dark:bg-gray-800"
             aria-labelledby="about-title"
         >

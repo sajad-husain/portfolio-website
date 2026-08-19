@@ -70,6 +70,7 @@ function Contact() {
 
     return (
         <section
+            id="contact"
             className="section-container bg-white dark:bg-gray-900"
             aria-labelledby="contact-title"
         >

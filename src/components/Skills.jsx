@@ -37,6 +37,7 @@ const skillCategories = [
 function Skills() {
     return (
         <section
+            id="skills"
             className="section-container bg-white dark:bg-gray-900"
             aria-labelledby="skills-title"
         >

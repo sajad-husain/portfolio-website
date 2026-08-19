@@ -1,6 +1,7 @@
 function Hero() {
     return (
         <section
+            id="top"
             className="min-h-screen flex items-center justify-center surface-base px-4"
             aria-label="Hero"
         >
