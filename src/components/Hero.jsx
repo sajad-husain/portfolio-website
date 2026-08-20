@@ -1,23 +1,36 @@
+import TypingEffect from "./TypingEffect";
+import heroImg from "../assets/hero.png";
+
+const ROLES = ["MERN Developer", "PERN Developer", "React Developer", "Full-Stack Developer"];
+
 function Hero() {
     return (
         <section
             id="top"
-            className="min-h-screen flex items-center justify-center surface-base px-4"
+            className="relative min-h-screen flex items-center surface-base px-4 pt-24 pb-16 overflow-hidden"
             aria-label="Hero"
         >
-            <div className="text-center text-white">
-                <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">
-                    Hi, I'm Sajjad Hussain
-                </h1>
-                <p className="text-2xl md:text-3xl mb-8">
-                    Full-Stack Developer | MERN &amp; PERN Stack
-                </p>
-                <a
-                    href="#projects"
-                    className="inline-block bg-white text-purple-600 font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                >
-                    Check My Work
-                </a>
+            <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="text-center md:text-left">
+                    <h1 className="text-hero-clamp font-bold text-ink-primary mb-4 animate-fade-in">
+                        Hi, I'm Sajjad Hussain
+                    </h1>
+                    <p className="text-xl md:text-2xl text-ink-secondary mb-8">
+                        <TypingEffect words={ROLES} />
+                    </p>
+                    <p className="text-lg font-semibold text-white">
+                        Full-Stack Developer | MERN &amp; PERN Stack
+                    </p>
+                </div>
+
+                <div className="hidden md:flex justify-center">
+                    <img
+                        src={heroImg}
+                        alt="Sajjad Hussain"
+                        className="max-w-sm w-full rounded-2xl"
+                        fetchpriority="high"
+                    />
+                </div>
             </div>
         </section>
     );
