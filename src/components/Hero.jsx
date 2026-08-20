@@ -10,7 +10,21 @@ function Hero() {
             className="relative min-h-screen flex items-center surface-base px-4 pt-24 pb-16 overflow-hidden"
             aria-label="Hero"
         >
-            <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="absolute inset-0 bg-grid" aria-hidden="true"></div>
+            <div
+                className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-accent/15 blur-3xl animate-float"
+                aria-hidden="true"
+            ></div>
+            <div
+                className="absolute -bottom-24 right-0 w-80 h-80 rounded-full bg-accent-muted/10 blur-3xl"
+                aria-hidden="true"
+            ></div>
+            <div
+                className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-b from-transparent to-canvas"
+                aria-hidden="true"
+            ></div>
+
+            <div className="relative container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="text-center md:text-left">
                     <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-accent/40 bg-accent/10 text-sm font-mono text-accent-soft">
                         <span className="relative flex h-2 w-2" aria-hidden="true">
