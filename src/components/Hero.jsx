@@ -23,11 +23,15 @@ function Hero() {
                     </p>
                 </div>
 
-                <div className="hidden md:flex justify-center">
+                <div className="relative hidden md:flex justify-center">
+                    <div
+                        className="absolute inset-0 -m-6 rounded-full bg-accent/25 blur-3xl"
+                        aria-hidden="true"
+                    ></div>
                     <img
                         src={heroImg}
                         alt="Sajjad Hussain"
-                        className="max-w-sm w-full rounded-2xl"
+                        className="relative max-w-sm w-full rounded-2xl animate-float"
                         fetchpriority="high"
                     />
                 </div>
