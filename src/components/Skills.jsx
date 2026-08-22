@@ -1,7 +1,10 @@
+import { techIcon, STACKS } from "../utils/techIcons";
+
 const skillCategories = [
     {
         id: "frontend",
         name: "Frontend",
+        stacks: ["mern", "pern"],
         skills: [
             { id: "react", name: "React" },
             { id: "js", name: "JavaScript" },
@@ -13,17 +16,18 @@ const skillCategories = [
     {
         id: "backend",
         name: "Backend",
+        stacks: ["mern", "pern"],
         skills: [
             { id: "node", name: "Node.js" },
             { id: "express", name: "Express" },
             { id: "python", name: "Python" },
             { id: "mongodb", name: "MongoDB" },
-            { id: "sql", name: "SQL" },
+            { id: "sql", name: "PostgreSQL / SQL" },
         ],
     },
     {
         id: "tools",
-        name: "Tools & Others",
+        name: "Tools",
         skills: [
             { id: "git", name: "Git" },
             { id: "github", name: "GitHub" },
@@ -50,19 +54,44 @@ function Skills() {
                     {skillCategories.map((category) => (
                         <div
                             key={category.id}
-                            className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg"
+                            className="glass-card card-hover p-6"
                         >
-                            <h3 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
-                                {category.name}
-                            </h3>
-                            <div className="flex flex-wrap gap-3 justify-center">
+                            <div className="flex flex-col items-center mb-6">
+                                <h3 className="text-xl font-bold text-center text-ink-primary">
+                                    {category.name}
+                                </h3>
+                                {category.stacks && (
+                                    <div className="mt-2 flex gap-2">
+                                        {category.stacks.map((s) => (
+                                            <span
+                                                key={s}
+                                                className="font-mono text-[11px] uppercase tracking-wider text-accent-soft bg-accent/10 border border-accent/30 px-2 py-0.5 rounded"
+                                            >
+                                                {s}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-3">
                                 {category.skills.map((skill) => (
-                                    <span
+                                    <div
                                         key={skill.id}
-                                        className="bg-surface-raised border border-white/10 text-ink-primary px-4 py-2 rounded-full text-sm font-semibold btn-hover"
+                                        className="flex items-center gap-2.5 rounded-lg bg-white/[0.03] border border-white/5 px-3 py-2.5 hover:border-accent/40 transition-colors"
                                     >
-                                        {skill.name}
-                                    </span>
+                                        <img
+                                            src={techIcon(skill.id)}
+                                            alt=""
+                                            width="22"
+                                            height="22"
+                                            loading="lazy"
+                                            className="shrink-0"
+                                        />
+                                        <span className="text-sm font-medium text-ink-secondary truncate">
+                                            {skill.name}
+                                        </span>
+                                    </div>
                                 ))}
                             </div>
                         </div>
