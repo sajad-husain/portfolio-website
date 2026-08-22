@@ -2,6 +2,8 @@
 
 A personal portfolio website built with React, Vite, and Tailwind CSS to showcase my skills, projects, and contact information.
 
+> **Upgrading the site?** See [IMPROVEMENTS.md](./IMPROVEMENTS.md) for the phased roadmap and progress tracker.
+
 ## Features
 
 - Responsive design with mobile-first approach
