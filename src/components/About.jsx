@@ -20,16 +20,18 @@ function About() {
                     <div className="flex-1 text-center md:text-left">
                         <p className="text-lg text-ink-secondary mb-4 leading-relaxed">
                             I'm <span className="font-semibold text-accent-soft">Sajjad Hussain</span>,
-                            a full-stack developer from Pakistan building with the MERN and PERN stacks.
+                            a full-stack developer from Pakistan focused on shipping complete products —
+                            not just tutorials.
                         </p>
                         <p className="text-ink-secondary mb-4 leading-relaxed">
-                            I build web applications that solve real problems, working across
-                            <span className="font-medium text-ink-primary"> React, Node.js, and modern JavaScript</span> from
-                            database to deployment.
+                            My day-to-day is React on the front, Node.js and Express in the middle,
+                            and MongoDB or PostgreSQL behind it. I care about clean APIs, sensible
+                            data models, and interfaces that feel fast.
                         </p>
                         <p className="text-ink-secondary leading-relaxed">
-                            Outside of client work I explore new tooling, contribute to open source,
-                            and sharpen my engineering fundamentals.
+                            Right now I'm deepening my backend engineering skills and building
+                            production-grade projects for my portfolio. Open source and code review
+                            culture are where I sharpen my craft.
                         </p>
 
                         <div className="mt-6 p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
