@@ -1,6 +1,7 @@
 import useTheme from "./hooks/useTheme";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Stats from "./components/Stats";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -24,7 +25,9 @@ function App() {
                 <Navbar darkMode={darkMode} toggleTheme={toggleDarkMode} />
 
                 <main id="main-content">
-                    <Hero />                    <About />
+                    <Hero />
+                    <Stats />
+                    <About />
                     <Skills />
                     <Projects />
                     <Timeline />
