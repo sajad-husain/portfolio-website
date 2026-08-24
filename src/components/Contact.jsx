@@ -75,13 +75,60 @@ function Contact() {
             className="section-container"
             aria-label="Contact me"
         >
-            <div className="container mx-auto max-w-3xl">
+            <div className="container mx-auto max-w-6xl">
                 <SectionHeader
                     index="05"
                     id="contact"
                     title="Contact Me"
                     subtitle="Have a project in mind? Let's talk!"
                 />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="flex flex-col justify-center text-center md:text-left">
+                        <h3 className="text-2xl font-bold text-ink-primary mb-4">
+                            Let's build something together.
+                        </h3>
+                        <p className="text-ink-secondary leading-relaxed mb-8">
+                            Whether you have a project idea, a job opportunity, or just want to
+                            talk shop about the MERN or PERN stack — my inbox is always open.
+                        </p>
+                        <div className="space-y-4">
+                            <a
+                                href="mailto:sajjad@example.com"
+                                className="block font-mono text-sm text-accent-soft hover:text-accent transition-colors"
+                            >
+                                sajjad@example.com
+                            </a>
+                            <div className="flex gap-6 md:justify-start justify-center">
+                                <a
+                                    href="https://github.com/yourusername"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-ink-secondary hover:text-ink-primary transition-colors"
+                                >
+                                    GitHub
+                                </a>
+                                <a
+                                    href="https://linkedin.com/in/yourusername"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-ink-secondary hover:text-ink-primary transition-colors"
+                                >
+                                    LinkedIn
+                                </a>
+                                <a
+                                    href="https://twitter.com/yourusername"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-ink-secondary hover:text-ink-primary transition-colors"
+                                >
+                                    Twitter
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5" noValidate>
 
                 <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div>
@@ -171,36 +218,7 @@ function Contact() {
                     >
                         {status === "sending" ? "Sending..." : "Send Message"}
                     </button>
-                </form>
-
-                <div className="mt-12 text-center">
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">Or connect with me on:</p>
-                    <div className="flex justify-center gap-6">
-                        <a
-                            href="https://github.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                        >
-                            GitHub
-                        </a>
-                        <a
-                            href="https://linkedin.com/in/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                        >
-                            LinkedIn
-                        </a>
-                        <a
-                            href="https://twitter.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                        >
-                            Twitter
-                        </a>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
