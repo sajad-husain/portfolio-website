@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import SectionHeader from "./SectionHeader";
 
 const projects = [
     {
@@ -47,15 +48,15 @@ function Projects() {
         <section
             id="projects"
             className="section-container surface-raised"
-            aria-labelledby="projects-title"
+            aria-label="My projects"
         >
             <div className="container mx-auto max-w-6xl">
-                <h2 id="projects-title" className="section-title">
-                    My Projects
-                </h2>
-                <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
-                    Here are some of my recent works
-                </p>
+                <SectionHeader
+                    index="03"
+                    id="projects"
+                    title="My Projects"
+                    subtitle="Here are some of my recent works"
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (

@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import SectionHeader from "./SectionHeader";
 
 function TerminalCard() {
     return (
@@ -32,12 +33,10 @@ function About() {
         <section
             id="about"
             className="section-container surface-raised"
-            aria-labelledby="about-title"
+            aria-label="About me"
         >
             <div className="container mx-auto max-w-6xl">
-                <h2 id="about-title" className="section-title">
-                    About Me
-                </h2>
+                <SectionHeader index="01" id="about" title="About Me" />
 
                 <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <TerminalCard />

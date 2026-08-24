@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import SectionHeader from "./SectionHeader";
 
 // TODO: create a form at https://formspree.io and paste your form ID below
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
@@ -72,15 +73,15 @@ function Contact() {
         <section
             id="contact"
             className="section-container"
-            aria-labelledby="contact-title"
+            aria-label="Contact me"
         >
             <div className="container mx-auto max-w-3xl">
-                <h2 id="contact-title" className="section-title">
-                    Contact Me
-                </h2>
-                <p className="text-center text-gray-600 dark:text-gray-400 mb-12">
-                    Have a project in mind? Let's talk!
-                </p>
+                <SectionHeader
+                    index="05"
+                    id="contact"
+                    title="Contact Me"
+                    subtitle="Have a project in mind? Let's talk!"
+                />
 
                 <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div>

@@ -1,3 +1,5 @@
+import SectionHeader from "./SectionHeader";
+
 const timelineItems = [
     {
         period: "2024 — Present",
@@ -24,12 +26,10 @@ function Timeline() {
         <section
             id="timeline"
             className="section-container"
-            aria-labelledby="timeline-title"
+            aria-label="My journey"
         >
             <div className="container mx-auto max-w-3xl">
-                <h2 id="timeline-title" className="section-title">
-                    Journey
-                </h2>
+                <SectionHeader index="04" id="journey" title="Journey" />
 
                 <ol className="relative border-l border-white/10 ml-3 space-y-10">
                     {timelineItems.map((item) => (

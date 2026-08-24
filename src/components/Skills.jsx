@@ -1,4 +1,5 @@
 import { techIcon, STACKS } from "../utils/techIcons";
+import SectionHeader from "./SectionHeader";
 
 const skillCategories = [
     {
@@ -43,12 +44,10 @@ function Skills() {
         <section
             id="skills"
             className="section-container"
-            aria-labelledby="skills-title"
+            aria-label="My skills"
         >
             <div className="container mx-auto max-w-6xl">
-                <h2 id="skills-title" className="section-title">
-                    My Skills
-                </h2>
+                <SectionHeader index="02" id="skills" title="My Skills" />
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {skillCategories.map((category) => (
