@@ -129,8 +129,6 @@ function Contact() {
                     </div>
 
                     <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5" noValidate>
-
-                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div>
                         <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                             Name *
