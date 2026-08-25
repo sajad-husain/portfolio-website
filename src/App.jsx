@@ -1,5 +1,6 @@
 import useTheme from "./hooks/useTheme";
 import Navbar from "./components/Navbar";
+import ScrollProgress from "./components/ScrollProgress";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import TechMarquee from "./components/TechMarquee";
@@ -23,6 +24,7 @@ function App() {
             </a>
 
             <div>
+                <ScrollProgress />
                 <Navbar darkMode={darkMode} toggleTheme={toggleDarkMode} />
 
                 <main id="main-content">
