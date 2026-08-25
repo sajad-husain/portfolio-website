@@ -51,7 +51,7 @@ function ProjectCard({ title, description, tech, link, gradient, featured }) {
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-2 px-4 text-sm rounded-lg border border-white/15 font-medium text-ink-primary hover:border-accent/50 transition-colors"
+                        className="py-2 px-4 text-sm rounded-lg border border-white/15 font-medium text-ink-primary hover:border-accent/50 transition-all active:scale-95"
                     >
                         GitHub Repo
                     </a>

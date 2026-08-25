@@ -55,7 +55,7 @@ function Hero() {
                         <a
                             href="/resume.pdf"
                             download
-                            className="inline-flex items-center py-3 px-8 rounded-lg border border-white/15 text-base font-semibold text-ink-primary hover:border-accent/60 hover:bg-accent/10 transition-colors duration-200"
+                            className="inline-flex items-center py-3 px-8 rounded-lg border border-white/15 text-base font-semibold text-ink-primary hover:border-accent/60 hover:bg-accent/10 transition-all duration-200 active:scale-95"
                         >
                             Download CV
                         </a>
