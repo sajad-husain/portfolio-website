@@ -63,10 +63,10 @@ function Contact() {
     };
 
     const inputClass = (field) =>
-        `w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white ${
+        `w-full px-4 py-3 bg-white/[0.03] border rounded-lg text-ink-primary placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-accent/60 focus:border-accent focus:shadow-[0_0_16px_rgba(139,92,246,0.3)] transition-shadow ${
             errors[field]
-                ? "border-red-500 dark:border-red-400"
-                : "border-gray-300 dark:border-gray-600"
+                ? "border-red-500"
+                : "border-white/10"
         }`;
 
     return (
@@ -130,7 +130,7 @@ function Contact() {
 
                     <form onSubmit={handleSubmit} className="glass-card p-8 space-y-5" noValidate>
                     <div>
-                        <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+                        <label htmlFor="name" className="block text-ink-secondary font-medium mb-2">
                             Name *
                         </label>
                         <input
@@ -153,7 +153,7 @@ function Contact() {
                     </div>
 
                     <div>
-                        <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+                        <label htmlFor="email" className="block text-ink-secondary font-medium mb-2">
                             Email *
                         </label>
                         <input
@@ -176,7 +176,7 @@ function Contact() {
                     </div>
 
                     <div>
-                        <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
+                        <label htmlFor="message" className="block text-ink-secondary font-medium mb-2">
                             Message *
                         </label>
                         <textarea
