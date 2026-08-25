@@ -95,6 +95,30 @@
     @apply transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/40;
   }
 
+  .spotlight-card {
+    position: relative;
+  }
+
+  .spotlight-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(
+      400px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(139, 92, 246, 0.15),
+      transparent 45%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .spotlight-card:hover::before {
+    opacity: 1;
+  }
+
   .btn-hover {
     @apply hover:scale-105 transition-transform duration-200;
   }

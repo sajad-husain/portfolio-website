@@ -1,7 +1,14 @@
 function ProjectCard({ title, description, tech, link, gradient, featured }) {
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+        e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`);
+    };
+
     return (
         <article
-            className={`glass-card card-hover overflow-hidden ${
+            onMouseMove={handleMouseMove}
+            className={`glass-card spotlight-card card-hover overflow-hidden ${
                 featured ? "gradient-border" : ""
             }`}
         >
