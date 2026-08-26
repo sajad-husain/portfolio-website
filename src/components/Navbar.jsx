@@ -21,6 +21,16 @@ function Navbar({ darkMode, toggleTheme }) {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    useEffect(() => {
+        const close = () => setMenuOpen(false);
+        window.addEventListener("resize", close);
+        window.addEventListener("hashchange", close);
+        return () => {
+            window.removeEventListener("resize", close);
+            window.removeEventListener("hashchange", close);
+        };
+    }, []);
+
     return (
         <header
             className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
