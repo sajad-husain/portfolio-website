@@ -29,7 +29,7 @@ export default function TechMarquee() {
     return (
         <section
             className="py-8 border-b border-white/5 overflow-hidden group"
-            aria-label="Technologies I work with"
+            aria-hidden="true"
         >
             <div className="flex w-max group-hover:[animation-play-state:paused]">
                 <MarqueeTrack />

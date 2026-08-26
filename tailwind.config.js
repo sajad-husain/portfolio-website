@@ -30,8 +30,8 @@ export default {
         },
         ink: {
           primary: "#f4f4f6",
-          secondary: "#b8b8c4",
-          muted: "#8a8a99",
+          secondary: "#c2c2cd",
+          muted: "#9a9aab",
         },
       },
       animation: {
