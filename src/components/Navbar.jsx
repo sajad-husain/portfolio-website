@@ -32,7 +32,7 @@ function Navbar({ darkMode, toggleTheme }) {
         >
             <nav
                 aria-label="Primary"
-                className="container mx-auto max-w-6xl flex items-center justify-between px-4 py-4"
+                className="container mx-auto max-w-6xl flex items-center justify-between px-4 py-3 md:py-4"
             >
                 <a href="#top" className="font-display text-lg font-bold text-ink-primary">
                     {"<sajjad />"}
@@ -131,7 +131,7 @@ function Navbar({ darkMode, toggleTheme }) {
                             <a
                                 href={`#${link.id}`}
                                 onClick={() => setMenuOpen(false)}
-                                className="block px-4 py-3 rounded-lg text-base font-medium text-ink-secondary hover:text-ink-primary hover:bg-white/5 transition-colors"
+                                className="block px-4 py-3 min-h-[44px] rounded-lg text-base font-medium text-ink-secondary hover:text-ink-primary hover:bg-white/5 transition-colors"
                             >
                                 {link.label}
                             </a>
