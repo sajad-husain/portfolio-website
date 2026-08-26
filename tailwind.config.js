@@ -26,7 +26,7 @@ export default {
         line: "rgb(var(--line-rgb) / <alpha-value>)",
         accent: {
           DEFAULT: "#8b5cf6",
-          soft: "#a78bfa",
+          soft: "rgb(var(--accent-soft-rgb) / <alpha-value>)",
           muted: "#7c3aed",
         },
         ink: {

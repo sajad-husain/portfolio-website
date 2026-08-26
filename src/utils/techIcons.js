@@ -4,7 +4,7 @@ export function techIcon(id) {
     const map = {
         react: ["react/react-original"],
         js: ["javascript/javascript-original"],
-        tailwind: ["tailwindcss/tailwindcss-plain"],
+        tailwind: ["tailwindcss/tailwindcss-original"],
         html: ["html5/html5-original"],
         html5: ["html5/html5-original"],
         css: ["css3/css3-original"],
@@ -18,7 +18,7 @@ export function techIcon(id) {
         git: ["git/git-original"],
         github: ["github/github-original"],
         vscode: ["vscode/vscode-original"],
-        vite: ["vitejs/vite-original"],
+        vite: ["vitejs/vitejs-original"],
         postman: ["postman/postman-original"],
     };
     const path = map[id];

@@ -12,11 +12,11 @@ function Hero() {
         >
             <div className="absolute inset-0 bg-grid" aria-hidden="true"></div>
             <div
-                className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-accent/15 blur-3xl animate-float"
+                className="absolute -top-32 -left-32 w-96 h-96 rounded-full glow-blob blur-3xl animate-float"
                 aria-hidden="true"
             ></div>
             <div
-                className="absolute -bottom-24 right-0 w-80 h-80 rounded-full bg-accent-muted/10 blur-3xl"
+                className="absolute -bottom-24 right-0 w-80 h-80 rounded-full glow-blob blur-3xl"
                 aria-hidden="true"
             ></div>
             <div
@@ -89,7 +89,7 @@ function Hero() {
 
                 <div className="relative hidden md:flex justify-center">
                     <div
-                        className="absolute inset-0 -m-6 rounded-full bg-accent/25 blur-3xl"
+                        className="absolute inset-0 -m-6 rounded-full hero-halo blur-3xl"
                         aria-hidden="true"
                     ></div>
                     <img

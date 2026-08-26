@@ -86,7 +86,7 @@ function Skills() {
                                             height="22"
                                             loading="lazy"
                                             decoding="async"
-                                            className="shrink-0"
+                                            className={`shrink-0 ${skill.id === "express" ? "dark:invert" : ""}`}
                                         />
                                         <span className="text-sm font-medium text-ink-secondary truncate">
                                             {skill.name}
