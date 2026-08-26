@@ -9,7 +9,7 @@ const STATS = [
 
 export default function Stats() {
     return (
-        <section className="border-y border-white/5 bg-surface-raised" aria-label="Quick facts">
+        <section className="border-y border-line/10 bg-surface-raised" aria-label="Quick facts">
             <div className="container mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-8 px-4 py-12 text-center">
                 {STATS.map((stat) => (
                     <div key={stat.label}>

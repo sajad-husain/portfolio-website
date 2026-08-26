@@ -4,7 +4,7 @@ import SectionHeader from "./SectionHeader";
 function TerminalCard() {
     return (
         <div className="glass-card overflow-hidden w-full max-w-sm mx-auto">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.03]">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-line/10 bg-line/5">
                 <span className="w-3 h-3 rounded-full bg-red-500/70" aria-hidden="true"></span>
                 <span className="w-3 h-3 rounded-full bg-yellow-500/70" aria-hidden="true"></span>
                 <span className="w-3 h-3 rounded-full bg-green-500/70" aria-hidden="true"></span>

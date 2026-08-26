@@ -63,10 +63,10 @@ function Contact() {
     };
 
     const inputClass = (field) =>
-        `w-full px-4 py-3 bg-white/[0.03] border rounded-lg text-ink-primary placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-accent/60 focus:border-accent focus:shadow-[0_0_16px_rgba(139,92,246,0.3)] transition-shadow ${
+        `w-full px-4 py-3 bg-line/5 border rounded-lg text-ink-primary placeholder:text-ink-muted/60 focus:outline-none focus:ring-2 focus:ring-accent/60 focus:border-accent focus:shadow-[0_0_16px_rgba(139,92,246,0.3)] transition-shadow ${
             errors[field]
                 ? "border-red-500"
-                : "border-white/10"
+                : "border-line/15"
         }`;
 
     return (

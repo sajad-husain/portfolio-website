@@ -35,7 +35,7 @@ function ProjectCard({ title, description, tech, link, gradient, featured }) {
                     {tech.map((t) => (
                         <span
                             key={t.id}
-                            className="bg-white/5 border border-white/10 text-xs text-ink-secondary px-2.5 py-1 rounded-full"
+                            className="bg-line/5 border border-line/10 text-xs text-ink-secondary px-2.5 py-1 rounded-full"
                         >
                             {t.name}
                         </span>
@@ -58,7 +58,7 @@ function ProjectCard({ title, description, tech, link, gradient, featured }) {
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-2 px-4 text-sm rounded-lg border border-white/15 font-medium text-ink-primary hover:border-accent/50 transition-all active:scale-95"
+                        className="py-2 px-4 text-sm rounded-lg border border-line/20 font-medium text-ink-primary hover:border-accent/50 transition-all active:scale-95"
                     >
                         GitHub Repo
                     </a>

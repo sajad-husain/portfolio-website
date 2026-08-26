@@ -14,6 +14,14 @@
     <meta name="twitter:description" content="MERN & PERN stack developer building complete, production-grade web applications." />
     <meta name="twitter:image" content="/favicon.svg" />
     <meta name="theme-color" content="#0a0a0f" />
+    <script>
+      try {
+        var s = localStorage.getItem("theme");
+        if (s === "light" || (!s && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+          document.documentElement.classList.remove("dark");
+        }
+      } catch (e) {}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />

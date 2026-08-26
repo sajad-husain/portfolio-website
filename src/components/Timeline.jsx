@@ -31,7 +31,7 @@ function Timeline() {
             <div className="container mx-auto max-w-3xl">
                 <SectionHeader index="04" id="journey" title="Journey" />
 
-                <ol className="relative border-l border-white/10 ml-3 space-y-10">
+                <ol className="relative border-l border-line/15 ml-3 space-y-10">
                     {timelineItems.map((item) => (
                         <li key={item.period} className="relative pl-8">
                             <span

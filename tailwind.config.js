@@ -18,20 +18,21 @@ export default {
         "lead": ["1.125rem", { lineHeight: "1.75" }],
       },
       colors: {
-        canvas: "#0a0a0f",
+        canvas: "rgb(var(--canvas-rgb) / <alpha-value>)",
         surface: {
-          DEFAULT: "#12121a",
-          raised: "#1a1a24",
+          DEFAULT: "rgb(var(--surface-rgb) / <alpha-value>)",
+          raised: "rgb(var(--surface-raised-rgb) / <alpha-value>)",
         },
+        line: "rgb(var(--line-rgb) / <alpha-value>)",
         accent: {
           DEFAULT: "#8b5cf6",
           soft: "#a78bfa",
           muted: "#7c3aed",
         },
         ink: {
-          primary: "#f4f4f6",
-          secondary: "#c2c2cd",
-          muted: "#9a9aab",
+          primary: "rgb(var(--ink-primary-rgb) / <alpha-value>)",
+          secondary: "rgb(var(--ink-secondary-rgb) / <alpha-value>)",
+          muted: "rgb(var(--ink-muted-rgb) / <alpha-value>)",
         },
       },
       animation: {

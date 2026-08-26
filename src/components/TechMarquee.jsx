@@ -28,7 +28,7 @@ function MarqueeTrack() {
 export default function TechMarquee() {
     return (
         <section
-            className="py-8 border-b border-white/5 overflow-hidden group"
+            className="py-8 border-b border-line/10 overflow-hidden group"
             aria-hidden="true"
         >
             <div className="flex w-max group-hover:[animation-play-state:paused]">

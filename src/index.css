@@ -2,13 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --canvas-rgb: 246 246 250;
+  --surface-rgb: 255 255 255;
+  --surface-raised-rgb: 238 240 245;
+  --ink-primary-rgb: 22 22 29;
+  --ink-secondary-rgb: 63 63 74;
+  --ink-muted-rgb: 107 107 120;
+  --line-rgb: 16 16 30;
+  --grid-alpha: 0.08;
+}
+
+html.dark {
+  --canvas-rgb: 10 10 15;
+  --surface-rgb: 18 18 26;
+  --surface-raised-rgb: 26 26 36;
+  --ink-primary-rgb: 244 244 246;
+  --ink-secondary-rgb: 194 194 205;
+  --ink-muted-rgb: 154 154 171;
+  --line-rgb: 255 255 255;
+  --grid-alpha: 0.06;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-[#0a0a0f] text-gray-100 antialiased;
+    background-color: rgb(var(--canvas-rgb));
+    color: rgb(var(--ink-primary-rgb));
+    @apply antialiased transition-colors duration-300;
   }
 
   h1, h2, h3, h4 {
@@ -22,21 +46,24 @@
 
 @layer utilities {
   .surface-base {
-    background-color: #0a0a0f;
+    background-color: rgb(var(--canvas-rgb));
   }
 
   .surface-raised {
-    background-color: #12121a;
+    background-color: rgb(var(--surface-raised-rgb));
   }
 
   .surface-overlay {
-    background-color: #1a1a24;
+    background-color: rgb(var(--surface-raised-rgb));
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/[0.04] border border-white/10 backdrop-blur-md rounded-xl;
+    background-color: rgb(var(--surface-rgb) / 0.6);
+    border: 1px solid rgb(var(--line-rgb) / 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 0.75rem;
   }
 
   .glow {
@@ -50,8 +77,8 @@
 
   .bg-grid {
     background-image:
-      linear-gradient(rgba(139, 92, 246, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(139, 92, 246, var(--grid-alpha)) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, var(--grid-alpha)) 1px, transparent 1px);
     background-size: 48px 48px;
   }
 
@@ -62,7 +89,7 @@
   .gradient-border {
     border: 1px solid transparent;
     background:
-      linear-gradient(#12121a, #12121a) padding-box,
+      linear-gradient(rgb(var(--surface-rgb)), rgb(var(--surface-rgb))) padding-box,
       linear-gradient(135deg, rgba(139, 92, 246, 0.7), rgba(139, 92, 246, 0.1)) border-box;
   }
 
@@ -71,7 +98,8 @@
   }
 
   .section-title {
-    @apply text-4xl font-bold text-center text-gray-100 mb-12;
+    @apply text-4xl font-bold text-center mb-12;
+    color: rgb(var(--ink-primary-rgb));
   }
 
   .btn-primary {
@@ -129,7 +157,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: rgb(var(--canvas-rgb));
 }
 
 ::-webkit-scrollbar-thumb {

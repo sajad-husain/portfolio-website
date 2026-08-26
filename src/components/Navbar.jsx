@@ -35,7 +35,7 @@ function Navbar({ darkMode, toggleTheme }) {
         <header
             className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
                 scrolled || menuOpen
-                    ? "bg-canvas/80 backdrop-blur-md border-b border-white/10"
+                    ? "bg-canvas/80 backdrop-blur-md border-b border-line/10"
                     : "bg-transparent border-b border-transparent"
             }`}
             role="banner"
@@ -71,7 +71,7 @@ function Navbar({ darkMode, toggleTheme }) {
                         type="button"
                         onClick={toggleTheme}
                         aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-                        className="p-2 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-white/5 transition-colors"
+                        className="p-2 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-line/5 transition-colors"
                     >
                         {darkMode ? (
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -90,7 +90,7 @@ function Navbar({ darkMode, toggleTheme }) {
                         type="button"
                         onClick={toggleTheme}
                         aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-                        className="md:hidden p-2 mr-1 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-white/5 transition-colors"
+                        className="md:hidden p-2 mr-1 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-line/5 transition-colors"
                     >
                         {darkMode ? (
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -141,7 +141,7 @@ function Navbar({ darkMode, toggleTheme }) {
                             <a
                                 href={`#${link.id}`}
                                 onClick={() => setMenuOpen(false)}
-                                className="block px-4 py-3 min-h-[44px] rounded-lg text-base font-medium text-ink-secondary hover:text-ink-primary hover:bg-white/5 transition-colors"
+                                className="block px-4 py-3 min-h-[44px] rounded-lg text-base font-medium text-ink-secondary hover:text-ink-primary hover:bg-line/5 transition-colors"
                             >
                                 {link.label}
                             </a>
