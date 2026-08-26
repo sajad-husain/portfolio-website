@@ -85,6 +85,7 @@ function Skills() {
                                             width="22"
                                             height="22"
                                             loading="lazy"
+                                            decoding="async"
                                             className="shrink-0"
                                         />
                                         <span className="text-sm font-medium text-ink-secondary truncate">
